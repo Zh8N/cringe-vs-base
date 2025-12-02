@@ -57,12 +57,48 @@
 </div>
 <script>
 const data = [
- {id:1, t:'base', txt:'Робот-доставщик пропускает кота.', f:'Технологии с душой.', img:'/gen?prompt=cute+yellow+delivery+robot+rover+waiting+at+a+crosswalk+for+a+cat+to+cross,+cyberpunk+city+background+bokeh&aspect=3:4'},
- {id:2, t:'base', txt:'Атомный ледокол «Арктика» ломает лёд.', f:'Мощь.', img:'/gen?prompt=nuclear+icebreaker+Arktika+red+and+black+hull+crushing+thick+ice+in+the+arctic&aspect=3:4'},
- {id:3, t:'cringe', txt:'Сайт завис и требует справку.', f:'Бюрократия.', img:'/gen?prompt=pixelated+retro+computer+monitor+showing+error+404+and+glitchy+bureaucratic+text&aspect=3:4'},
- {id:4, t:'base', txt:'Панелька на закате, уютный свет.', f:'Эстетика.', img:'/gen?prompt=russian+panel+apartment+buildings+at+sunset,+purple+and+orange+sky&aspect=3:4'},
- {id:5, t:'cringe', txt:'Аляповатая вывеска на историческом здании.', f:'Визуальный шум.', img:'/gen?prompt=beautiful+historic+building+facade+ruined+by+ugly+cheap+bright+plastic+store+sign&aspect=3:4'},
- {id:6, t:'base', txt:'Парни толкают машину в метель.', f:'Взаимопомощь.', img:'/gen?prompt=group+of+young+men+pushing+a+stuck+car+out+of+snow+drift+in+blizzard&aspect=3:4'}
+ {
+    id: 1,
+    t: 'base',
+    txt: 'Робот-доставщик пропускает кота.',
+    f: 'Технологии с душой.',
+    img: 'images/robot-cat.jpg'
+  },
+  {
+    id: 2,
+    t: 'base',
+    txt: 'Атомный ледокол «Арктика» ломает лёд.',
+    f: 'Мощь.',
+    img: 'images/icebreaker.jpg'
+  },
+  {
+    id: 3,
+    t: 'cringe',
+    txt: 'Сайт завис и требует справку.',
+    f: 'Бюрократия.',
+    img: 'images/404-bureaucracy.jpg'
+  },
+  {
+    id: 4,
+    t: 'base',
+    txt: 'Панелька на закате, уютный свет.',
+    f: 'Эстетика.',
+    img: 'images/panelka-sunset.jpg'
+  },
+  {
+    id: 5,
+    t: 'cringe',
+    txt: 'Аляповатая вывеска на историческом здании.',
+    f: 'Визуальный шум.',
+    img: 'images/ugly-sign.jpg'
+  },
+  {
+    id: 6,
+    t: 'base',
+    txt: 'Парни толкают машину в метель.',
+    f: 'Взаимопомощь.',
+    img: 'images/snow-car.jpg'
+  }
 ];
 let idx=0, score=0, lock=false;
 function startGame(){ document.getElementById('screen-intro').classList.add('hidden'); document.getElementById('screen-game').classList.remove('hidden'); load(); }
