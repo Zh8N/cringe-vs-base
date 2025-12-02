@@ -10,8 +10,8 @@
 <style>
     body { font-family: sans-serif; background-color: #0f172a; color: white; overflow: hidden; }
     .font-heading { font-family: 'Russo One', sans-serif; }
-    .card-enter { opacity: 0; transform: scale(0.95) translateY(20px); transition: all 0.4s ease-out; }
-    .card-active { opacity: 1; transform: scale(1) translateY(0); }
+    .card-enter { opacity: 0; transform: scale(0.95) translateY(20px); }
+    .card-active { opacity: 1; transform: scale(1) translateY(0); transition: all 0.4s ease-out; }
     .card-exit-left { transform: translateX(-150%) rotate(-20deg); opacity: 0; transition: all 0.5s ease-in; }
     .card-exit-right { transform: translateX(150%) rotate(20deg); opacity: 0; transition: all 0.5s ease-in; }
     .stamp { opacity: 0; transform: scale(3) rotate(-15deg); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -32,7 +32,7 @@
 </div>
 <div id="screen-game" class="flex-1 flex flex-col relative" style="display: none;">
   <div class="flex-1 relative flex items-center justify-center p-4">
-    <div id="card" class="relative w-full h-full max-h-[500px] bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 flex flex-col">
+    <div id="card" class="relative w-full h-full max-h-[500px] bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 flex flex-col card-enter">
        <div class="relative flex-1 bg-black overflow-hidden">
          <img id="card-img" class="absolute inset-0 w-full h-full object-cover" src="" alt="">
          <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20"><div id="stamp" class="stamp border-4 px-8 py-2 rounded-lg font-black text-5xl uppercase mix-blend-hard-light"></div></div>
@@ -115,7 +115,6 @@ function load() {
   const c = data[idx];
   const el = document.getElementById('card');
   
-  // Убираем старые анимационные классы
   el.classList.remove('card-active', 'card-exit-left', 'card-exit-right');
   el.classList.add('card-enter');
   
@@ -125,7 +124,6 @@ function load() {
   document.getElementById('feedback').classList.add('hidden');
   document.getElementById('progress').innerText = 'LVL: ' + (idx + 1) + '/' + data.length;
   
-  // Запускаем анимацию появления
   setTimeout(() => {
     el.classList.remove('card-enter');
     el.classList.add('card-active');
